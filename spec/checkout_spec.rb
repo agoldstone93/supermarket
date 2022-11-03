@@ -24,10 +24,10 @@ describe Checkout do
     expect(checkout.price).to eq '£11.23'
   end
 
-  it 'can return the price when two fruit teas are scanned' do
-    shopping_list = ['FR1', 'FR1']
+  it 'can return the price when two coffees are scanned' do
+    shopping_list = ['CF1', 'CF1']
     checkout = Checkout.new(shopping_list)
-    expect(checkout.price).to eq '£6.22'
+    expect(checkout.price).to eq '£22.46'
   end
 
   it 'can return the price when three fruit teas, one straberry and one coffee is scanned' do
