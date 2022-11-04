@@ -26,10 +26,11 @@ private
     end
   end
 
-  def discount_multiple_products(discounted_item)
-    @price_list[discounted_item.to_sym] = 4.5 if @items.count(discounted_item) >= 3
+  def discount_multiple_products(discount_details)
+    @price_list[discount_details[0].to_sym] = discount_details[1] if @items.count(discount_details[0]) >= discount_details[2]
   end
 
+  # find the total price for all items scanned and apply discounts
   def sum_price
     items = @items
     items = buy_one_get_one_free(items, @bogof) unless @bogof.nil?
